@@ -1,9 +1,14 @@
-<html>
-    <head>
-        <title>My Website</title>
-    </head>
-    <body>
-        <h1>Welcome to My Website</h1>
-        <p>This is a simple HTML template.</p>
-    </body>
-</html>
+---
+layout: default
+title: 首页
+---
+
+<h2>文章列表</h2>
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <span>({{ post.date | date: "%Y-%m-%d" }})</span>
+    </li>
+  {% endfor %}
+</ul>
